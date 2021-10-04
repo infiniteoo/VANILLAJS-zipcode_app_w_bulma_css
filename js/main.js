@@ -9,7 +9,19 @@ function getLocationInfo(e) {
 
   // make request
   fetch(`https://api.zippopotam.us/us/${zip}`)
-    .then((res) => res.json())
+    .then((res) => {
+      if (res.status !== 200) {
+        document.querySelector("#output").innerHTML = `
+              <article class="message message-body is-danger">
+                Invalid Zipcode, please try again.
+              </article>
+            `;
+
+        throw Error(res.statusText);
+      } else {
+        return res.json();
+      }
+    })
     .then((data) => console.log(data))
     .catch((err) => console.log(err));
 }
