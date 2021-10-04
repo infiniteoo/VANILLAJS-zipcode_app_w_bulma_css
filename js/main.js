@@ -31,12 +31,12 @@ function getLocationInfo(e) {
       let output = "";
       data.places.forEach((place) => {
         output += `
-              <article className="message is-primary">
-                <div className="message-header">
+              <article class="message is-primary">
+                <div class="message-header">
                   <p>Location Info</p>
-                  <button className="delete"></button>
+                  <button class="delete"></button>
                 </div>
-                <div className="message-body">
+                <div class="message-body">
                   <ul>
                     <li><strong>City:</strong> ${place["place name"]}</li>
                     <li><strong>State:</strong> ${place["state"]}</li>
@@ -49,7 +49,7 @@ function getLocationInfo(e) {
             `;
       });
 
-      
+      document.querySelector("#output").innerHTML = output;
     })
     .catch((err) => console.log(err));
 }
