@@ -12,8 +12,10 @@ function getLocationInfo(e) {
     .then((res) => {
       if (res.status !== 200) {
         document.querySelector("#output").innerHTML = `
-              <article class="message message-body is-danger">
-                Invalid Zipcode, please try again.
+              <article class="message is-danger">
+                <div class="message-body">
+                  Invalid Zipcode, please try again.
+                </div>
               </article>
             `;
 
