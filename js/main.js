@@ -57,6 +57,7 @@ function getLocationInfo(e) {
     .catch((err) => console.log(err));
 }
 
+// show check or remove icon
 function showIcon(icon) {
   // clear icons
   document.querySelector(".icon-remove").style.display = "none";
@@ -69,6 +70,8 @@ function showIcon(icon) {
 // delete location box
 function deleteLocation(e) {
   if (e.target.className === "delete") {
-    console.log(123);
+    document.querySelector(".message").remove();
+    document.querySelector(".icon-check").remove();
+    document.querySelector(".zip").value = "";
   }
 }
