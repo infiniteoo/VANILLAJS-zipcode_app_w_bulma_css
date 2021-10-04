@@ -65,3 +65,10 @@ function showIcon(icon) {
   // show correct icon
   document.querySelector(`.icon-${icon}`).style.display = "inline-flex";
 }
+
+// delete location box
+function deleteLocation(e) {
+  if (e.target.className === "delete") {
+    console.log(123);
+  }
+}
